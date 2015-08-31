@@ -33,9 +33,18 @@ body, html{
 	color:#FF8272;
 }
 
+.line{
+	margin:10px 0;
+    display:block;
+    border:none;
+    color:white;
+    height:2px;
+    background:#FF8272;
+}
+
 p{
 	font-family: inherit;
-	margin: 1.5em 0 1.5em 0;
+	margin: .5em 0 .5em 0;
 	font-size:1em;
 }
 
@@ -150,6 +159,7 @@ font-weight: 900;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	color: #cfcfcf;
+	min-height: 100vh;
 }
 
 #tf-home .overlay{
@@ -162,6 +172,7 @@ font-weight: 900;
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', endColorstr='#66000000',GradientType=0 ); /* IE6-9 */
 	height: 750px;
 	background-attachment: fixed;
+	min-height: 100vh;
 }
 #tf-home p.lead{
 	color: #e3e3e3;
@@ -192,10 +203,10 @@ a.fa.fa-angle-down:hover{
 }
 /* About Section */
 #tf-about{
-	padding: 25px 0 80px 0;
+	padding: 45px 0 80px 0;
 	min-height:100vh;
 }
-ul.about-list{ margin: 30px 0 0 ;}
+ul.about-list{ margin: 0 ;}
 ul.about-list li{
 	display: block;
 	font-size: 1em;
@@ -205,17 +216,17 @@ ul.about-list li span{
 	margin-right: 10px;
 }
 
-/* Team Section */
-#tf-blog{
-	min-height: 100vh;
-	background: url(../img/blog.jpg);
+/* Events Section */
+#tf-events{
+	/*min-height: 100vh;*/
+	background: url(../img/coffee.jpg);
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	color: #ffffff;
 }
-#tf-blog .overlay{
+#tf-events .overlay{
 	background: -moz-linear-gradient(top,  rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.73) 17%, rgba(0,0,0,0.66) 35%, rgba(0,0,0,0.55) 62%, rgba(0,0,0,0.4) 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.8)), color-stop(17%,rgba(0,0,0,0.73)), color-stop(35%,rgba(0,0,0,0.66)), color-stop(62%,rgba(0,0,0,0.55)), color-stop(100%,rgba(0,0,0,0.4))); /* Chrome,Safari4+ */
 	background: -webkit-linear-gradient(top,  rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.73) 17%,rgba(0,0,0,0.66) 35%,rgba(0,0,0,0.55) 62%,rgba(0,0,0,0.4) 100%); /* Chrome10+,Safari5.1+ */
@@ -224,7 +235,6 @@ ul.about-list li span{
 	background: linear-gradient(to bottom,  rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.73) 17%,rgba(0,0,0,0.66) 35%,rgba(0,0,0,0.55) 62%,rgba(0,0,0,0.4) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', endColorstr='#66000000',GradientType=0 ); /* IE6-9 */
 	height: auto;
-	min-height: 100vh;
 	background-attachment: fixed;
 	padding: 30px 0 30px 0;
 }
@@ -236,12 +246,12 @@ ul.about-list li span{
 	font-weight: 300;
 }
 .section-title.center .line{
-	border-top: 4px solid #60ccc9;
+	border-top: 5px solid #60ccc9;
 	height: 10px;
 	width: 60px;
 	text-align: center;
 	margin: 0 auto;
-	margin-top: 20px;
+	margin-top: 10px;
 }
 
 .section-title.center hr {
@@ -361,10 +371,11 @@ img.img-circle.team-img {
     color: #FFF;
     text-align: center;
 }
-/* Gallery Section 
+/* Blog Section 
 ==============================*/
-#tf-works{
-	padding: 80px 0;
+#tf-blog{
+	padding: 30px 0 30px 0;
+	min-height: 100vh;
 }
 .categories{ 
 	padding: 10px 0;
@@ -372,7 +383,7 @@ img.img-circle.team-img {
 ul.cat li{
 	display: inline-block;
 }
-#tf-works li.pull-right {
+#tf-blog li.pull-right {
 	margin-top: 10px;
 }
 ol.type li{
@@ -462,7 +473,7 @@ ol.type li a.active { font-weight: 700; }
 .hover-bg:hover .hover-text{
 	opacity: 1;
 }
-#tf-works i.fa {
+#tf-blog i.fa {
 	height: 30px;
 	width: 30px;
 	border: 1px solid #60ccc9;
@@ -471,41 +482,7 @@ ol.type li a.active { font-weight: 700; }
 	border-radius: 50%;
 	color: #60ccc9;
 }
-/* Testimonials Section */
-#tf-testimonials{
-	background: url(../img/05.jpg);
-	background-size: cover;
-	background-position: center;
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	color: #ffffff;
-}
 
-#tf-testimonials .overlay{
-	background: -moz-linear-gradient(top,  rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.73) 17%, rgba(0,0,0,0.66) 35%, rgba(0,0,0,0.55) 62%, rgba(0,0,0,0.4) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.8)), color-stop(17%,rgba(0,0,0,0.73)), color-stop(35%,rgba(0,0,0,0.66)), color-stop(62%,rgba(0,0,0,0.55)), color-stop(100%,rgba(0,0,0,0.4))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.73) 17%,rgba(0,0,0,0.66) 35%,rgba(0,0,0,0.55) 62%,rgba(0,0,0,0.4) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.73) 17%,rgba(0,0,0,0.66) 35%,rgba(0,0,0,0.55) 62%,rgba(0,0,0,0.4) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.73) 17%,rgba(0,0,0,0.66) 35%,rgba(0,0,0,0.55) 62%,rgba(0,0,0,0.4) 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.73) 17%,rgba(0,0,0,0.66) 35%,rgba(0,0,0,0.55) 62%,rgba(0,0,0,0.4) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', endColorstr='#66000000',GradientType=0 ); /* IE6-9 */
-	padding: 80px 0;
-	background-attachment: fixed;
-}
-#testimonial {
-	padding: 30px 0;
-}
-#testimonial .item{
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-#testimonial .item p {
-	font-weight: 400;
-	margin: 30px 0;
-	color: #d1d1d1;
-}
 /* Contact Section */
 #tf-contact{
 	padding: 80px 0;
@@ -630,9 +607,22 @@ nav#footer p{
 	float:left;
 	margin-left:10px;
 }
-.be-section{
+
+.be-section, .be-section > .row{
+	margin:0;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 500;
+}
+.mar-top{
+	margin-top: -10px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+.padding{
+	padding:0 35px;
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
 }
 a.button{
 	padding:20px;
@@ -643,25 +633,35 @@ a.button{
 	transition: all 0.25s ease-in-out;
 	-webkit-appearance: none;
 	border-radius: 5px;
+	border: 2px solid #f5f5f5;
 }
 a.button:hover{
 	color:#fff;
 	background-color: #888888;
 }
+.be-section h3{
+	padding-top:20px;
+}
+.about-img{
+	max-width: 70%;
+}
 @media only screen and (max-width : 767px) {
     #tf-home .content{
-    	padding: 20% 0 0 0;
+    	padding: 30% 0 0 0;
     }
     .find, .become{
 		float: none;
 		margin-right: auto;
 		margin-left: auto;
 	}
+	.navbar-collapse{
+		background-color: #FF8272;
+	}
 
 }
 @media only screen and (max-width : 625px) {
     #tf-home .content{
-    	padding: 40% 0 0 0;
+    	padding: 50% 0 0 0;
     }
     .find, .become{
 		float: none;
