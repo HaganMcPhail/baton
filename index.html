@@ -42,8 +42,17 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script>
+        function finishedLoad(){
+            //alert('test');
+            setTimeout(function(){
+                $(".se-pre-con").fadeOut(800);
+            }, 1000)                
+        };
+    </script>
   </head>
-  <body>
+  <body onload="finishedLoad()">
+  <!-- <div class="se-pre-con"><h2 style="color:white;">BATON</h2></div> -->
     <!-- Navigation
     ==========================================-->
     <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
@@ -64,8 +73,8 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#tf-home" class="page-scroll">Home</a></li>
             <li><a href="#tf-about" class="page-scroll">About</a></li>
-            <li><a href="#tf-events" class="page-scroll">Events</a></li>
             <li><a href="#tf-blog" class="page-scroll">Blog</a></li>
+            <li><a href="#tf-events" class="page-scroll">Events</a></li>
             <li><a href="" onclick="return false" class="page-scroll">Log In</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
@@ -82,7 +91,7 @@
                 <br>
                 <div class="row">
                     <div class="col-sm-6 btn-container"><div class="home-btn find">Find a mentor</div></div>
-                    <div class="col-sm-6 btn-container"><div class="home-btn become">Become a mentor</div></div>    
+                    <div class="col-sm-6 btn-container"><div class="home-btn become">Be a mentor</div></div>    
                 </div>
                 <div class="row">
                     <a href="#tf-about" class="fa fa-angle-down page-scroll"></a>
@@ -93,72 +102,174 @@
 
     <!-- About Us Page
     ==========================================-->
-    <div id="tf-about">
+    <div id="tf-about" class="text-center">
         <div class="container">
             <div class="row">
-                <div class="col-md-5 hidden-sm hidden-xs">
-                    <img src="img/coffee.jpg" class="img-responsive">
-                </div>
-                <div class="col-md-7">
+                <div class="col-xs-12">
                     <div class="about-text">
-                        <div class="section-title">
-                            <h2>Some words <strong>about us</strong></h2>
-                            <hr>
-                            <div class="clearfix"></div>
+                        <div class="section-title center">
+                            <h2><strong>about us</strong></h2>
+                            <div class="line"></div>
                         </div>
                         <p class="intro">Our desire is to engage women cross-generationally in their faith through missional living. Baton’s mission is to connect, equip, and engage women in intentional mentorship.</p>
-                        <ul class="about-list">
-                            <li>
-                                <span class="fa fa-dot-circle-o"></span>
-                                <strong>Connect</strong> - <em>We use relevant issues to connect women together.</em>
-                            </li>
-                            <li>
-                                <span class="fa fa-dot-circle-o"></span>
-                                <strong>Equip</strong> - <em>We equip them with various resources to get the job done.</em>
-                            </li>
-                            <li>
-                                <span class="fa fa-dot-circle-o"></span>
-                                <strong>Engage</strong> - <em>Participants engage together and build meaningful relationships.</em>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
-            <div class="row"><br><br></div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="col-xs-12 text-center"><img src="http://placehold.it/250x150" class="img-responsive" alt=""></div>
+                    <div class="col-xs-12"><strong>Connect</strong> - <em>Baton will provide local and relevant women to connect with based on what you are looking for.  Get connected online but meet in real life!</em></div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="col-xs-12 text-center"><img src="http://placehold.it/250x150" class="img-responsive" alt=""></div>
+                    <div class="col-xs-12"><strong>Equip</strong> - <em>Don’t know what a mentorship should look like? We will equip you with resources to help you make the most out of your mentorship!</em></div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="col-xs-12 text-center"><img src="http://placehold.it/250x150" class="img-responsive" alt=""></div>
+                    <div class="col-xs-12"><strong>Engage</strong> - <em>We hope to engage you through thought provoking content and challenge you to grow in whatever stage of life you are in!</em></div>
+                </div>
+            </div>
+            <div class="row be-section">
+                <br><br>
+                <div class="col-xs-12 text-center">
+                    <button type="button" class="learn-more button" data-toggle="modal" data-target="#aboutModal">Open Modal</button>
+                </div>
+            </div>
+            <!-- <div class="row"><br><hr></div>
             <div class="row be-section">
                 <div class="row">
-                    <div class="col-sm-6 text-center light-blue">
+                    <div class="col-sm-6 text-center">
                         <div class="padding">
-                            <h3 class="text-center coral-text">Mentors</h3>
-                            <p class="">Are you are contemplating whether you could be a mentor or not? Do you know Jesus?  Have you walked with Him long enough to hear and practice the truth of His word? Baton is for you.</p>
+                            <h3 class="text-center coral-text">Find a Mentor</h3>
+                            <p class="">Maybe you need immediate, Godly advice. Maybe you want mentorship for a short season. Or maybe you are looking to be fully known and held accountable for the long run. Baton is for you.</p>
                         </div>
                     </div>
-                    <div class="col-sm-6 text-center mar-top visible-xs light-blue">
-                        <a href="mentor.html" class="button coral">Be a Mentor</a>
-                    </div>
-                    <div class="col-sm-6 text-center coral">
+                    <div class="col-sm-6 text-center">
                         <div class="padding">
-                            <h3 class="text-center light-blue-text">Mentees</h3>
-                            <p>Maybe you need immediate, Godly advice. Maybe you want mentorship for a short season. Or maybe you are looking to be fully known and held accountable for the long run. Baton is for you.</p>
+                            <h3 class="text-center light-blue-text">Be a Mentor</h3>
+                            <p>Do you know Jesus?  Have you walked with Him long enough to hear and practice the truth of His word? Answer the call. Pass it on.</p>
                         </div>
                     </div>
-                    <div class="col-xs-12 text-center mar-top coral visible-xs">
-                        <a href="mentor.html" class="button light-blue">Be Mentored</a>
-                    </div>
                 </div>
-                <div class="row hidden-xs">
-                    <div class="col-sm-6 mar-top text-center light-blue">
-                        <a href="mentor.html" class="button coral">Be a Mentor</a>
-                    </div>
-                    <div class="col-sm-6 mar-top text-center coral">
-                        <a href="mentor.html" class="button light-blue">Be Mentored</a>
-                    </div>
-                </div>
-                <!-- <div class="row be-section">
+                <div class="row be-section">
                     <div class="col-xs-12 text-center">
-                        <a href="about-mentorship.html"><small>Learn More</small></a>
+                        <a class="learn-more button" href="about-mentorship.html">Learn More</a>
                     </div>
-                </div> -->
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- Blog Section
+    ==========================================-->
+    <div id="tf-blog" class="text-center">
+        <div class="overlay">
+            <div class="container"> <!-- Container -->
+                <br><br>
+                <div class="section-title text-center center">
+                    <h2><strong>blog</strong></h2>
+                    <div class="line"></div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="categories">
+                    <ul class="cat">
+                        <li class="pull-left"><h4>View All Blogs</h4></li>
+                        <!-- <li class="pull-right">
+                            <ol class="type">
+                                <li><a href="#" data-filter="*" class="active">All</a></li>
+                                <li><a href="#" data-filter=".motivational">Motivational</a></li>
+                                <li><a href="#" data-filter=".religious">Religious</a></li>
+                                <li><a href="#" data-filter=".womanhood">Womanhood</a></li>
+                                <li><a href="#" data-filter=".life">Life Journey</a></li>
+                            </ol>
+                        </li> -->
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div id="" class="row">
+                    <div id="team" class="owl-carousel owl-theme row">
+                        <div class="item">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <h3>Blog Title</h3>
+                                    <h4>Blog Date</h4>
+                                    <p>This study will cover the basics of the gospel, the Bible, prayer, and other essentials to growing in Christ. We recommend this group for those who are not yet believers or are new to Bible study and faith. Led by Janet Graves and Deb Shipley...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <h3>Blog Title</h3>
+                                    <h4>Blog Date</h4>
+                                    <p>This study will cover the basics of the gospel, the Bible, prayer, and other essentials to growing in Christ. We recommend this group for those who are not yet believers or are new to Bible study and faith. Led by Janet Graves and Deb Shipley...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <h3>Blog Title</h3>
+                                    <h4>Blog Date</h4>
+                                    <p>This study will cover the basics of the gospel, the Bible, prayer, and other essentials to growing in Christ. We recommend this group for those who are not yet believers or are new to Bible study and faith. Led by Janet Graves and Deb Shipley...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <h3>Blog Title</h3>
+                                    <h4>Blog Date</h4>
+                                    <p>This study will cover the basics of the gospel, the Bible, prayer, and other essentials to growing in Christ. We recommend this group for those who are not yet believers or are new to Bible study and faith. Led by Janet Graves and Deb Shipley...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <h3>Blog Title</h3>
+                                    <h4>Blog Date</h4>
+                                    <p>This study will cover the basics of the gospel, the Bible, prayer, and other essentials to growing in Christ. We recommend this group for those who are not yet believers or are new to Bible study and faith. Led by Janet Graves and Deb Shipley...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <h3>Blog Title</h3>
+                                    <h4>Blog Date</h4>
+                                    <p>This study will cover the basics of the gospel, the Bible, prayer, and other essentials to growing in Christ. We recommend this group for those who are not yet believers or are new to Bible study and faith. Led by Janet Graves and Deb Shipley...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <h3>Blog Title</h3>
+                                    <h4>Blog Date</h4>
+                                    <p>This study will cover the basics of the gospel, the Bible, prayer, and other essentials to growing in Christ. We recommend this group for those who are not yet believers or are new to Bible study and faith. Led by Janet Graves and Deb Shipley...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <h3>Blog Title</h3>
+                                    <h4>Blog Date</h4>
+                                    <p>This study will cover the basics of the gospel, the Bible, prayer, and other essentials to growing in Christ. We recommend this group for those who are not yet believers or are new to Bible study and faith. Led by Janet Graves and Deb Shipley...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -169,251 +280,31 @@
         <div class="overlay">
             <div class="container">
                 <div class="section-title center">
-                    <h2>attend one of <strong>our events</strong></h2>
+                    <h2><strong>events</strong></h2>
                     <div class="line"></div>
                 </div>
-
-                <div id="team" class="owl-carousel owl-theme row">
-                    <div class="item">
-                        <div class="thumbnail">
-                            <div class="caption">
-                                <h3>Event Title</h3>
-                                <h4>Event Date</h4>
-                                <p>This study will cover the basics of the gospel, the Bible, prayer, and other essentials to growing in Christ. We recommend this group for those who are not yet believers or are new to Bible study and faith. Led by Janet Graves and Deb Shipley...</p>
-                            </div>
+                <br>
+                <div class="row text-left">
+                    <div class="col-xs-offset-0 col-md-8 col-md-offset-2">
+                        <img src="http://placehold.it/350x200" class="img-responsive" style="float:left;"/>
+                        <div class="text-center">
+                            <h2>Event Title #1</h2>
+                            <h4>Sept. 28th, 2015</h4>  
                         </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="thumbnail">
-                            <div class="caption">
-                                <h3>Event Title</h3>
-                                <h4>Event Date</h4>
-                                <p>This study will cover the basics of the gospel, the Bible, prayer, and other essentials to growing in Christ. We recommend this group for those who are not yet believers or are new to Bible study and faith. Led by Janet Graves and Deb Shipley...</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="thumbnail">
-                            <div class="caption">
-                                <h3>Event Title</h3>
-                                <h4>Event Date</h4>
-                                <p>This study will cover the basics of the gospel, the Bible, prayer, and other essentials to growing in Christ. We recommend this group for those who are not yet believers or are new to Bible study and faith. Led by Janet Graves and Deb Shipley...</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="thumbnail">
-                            <div class="caption">
-                                <h3>Event Title</h3>
-                                <h4>Event Date</h4>
-                                <p>This study will cover the basics of the gospel, the Bible, prayer, and other essentials to growing in Christ. We recommend this group for those who are not yet believers or are new to Bible study and faith. Led by Janet Graves and Deb Shipley...</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="thumbnail">
-                            <div class="caption">
-                                <h3>Event Title</h3>
-                                <h4>Event Date</h4>
-                                <p>This study will cover the basics of the gospel, the Bible, prayer, and other essentials to growing in Christ. We recommend this group for those who are not yet believers or are new to Bible study and faith. Led by Janet Graves and Deb Shipley...</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="thumbnail">
-                            <div class="caption">
-                                <h3>Event Title</h3>
-                                <h4>Event Date</h4>
-                                <p>This study will cover the basics of the gospel, the Bible, prayer, and other essentials to growing in Christ. We recommend this group for those who are not yet believers or are new to Bible study and faith. Led by Janet Graves and Deb Shipley...</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="thumbnail">
-                            <div class="caption">
-                                <h3>Event Title</h3>
-                                <h4>Event Date</h4>
-                                <p>This study will cover the basics of the gospel, the Bible, prayer, and other essentials to growing in Christ. We recommend this group for those who are not yet believers or are new to Bible study and faith. Led by Janet Graves and Deb Shipley...</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="thumbnail">
-                            <div class="caption">
-                                <h3>Event Title</h3>
-                                <h4>Event Date</h4>
-                                <p>This study will cover the basics of the gospel, the Bible, prayer, and other essentials to growing in Christ. We recommend this group for those who are not yet believers or are new to Bible study and faith. Led by Janet Graves and Deb Shipley...</p>
-                            </div>
-                        </div>
-                    </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eleifend, magna vel lobortis dapibus, ante felis molestie nisl, at mollis ex augue eu erat. Vivamus pellentesque sollicitudin augue, et rhoncus sapien molestie vel. Vivamus rhoncus ultrices libero ut pharetra. Aenean non nisi eu tortor auctor hendrerit. Morbi arcu massa, dictum at sagittis ut, tempor quis tellus. Morbi pellentesque facilisis orci. Mauris sapien ante, condimentum eu sapien ac, porta maximus ligula. Vivamus pellentesque sollicitudin augue, et rhoncus sapien molestie vel. Vivamus rhoncus ultrices libero ut pharetra.</p>
+                    </div>        
                 </div>
-                
-            </div>
-        </div>
-    </div>
-
-    <!-- Blog Section
-    ==========================================-->
-    <div id="tf-blog" class="text-center">
-        <div class="container"> <!-- Container -->
-            <div class="section-title text-center center">
-                <h2>view <strong>our blog</strong></h2>
-                <div class="line"></div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="categories">
-                
-                <ul class="cat">
-                    <li class="pull-left"><h4>Filter by Type:</h4></li>
-                    <li class="pull-right">
-                        <ol class="type">
-                            <li><a href="#" data-filter="*" class="active">All</a></li>
-                            <li><a href="#" data-filter=".motivational">Motivational</a></li>
-                            <li><a href="#" data-filter=".religious">Religious</a></li>
-                            <li><a href="#" data-filter=".womanhood">Womanhood</a></li>
-                            <li><a href="#" data-filter=".life">Life Journey</a></li>
-                        </ol>
-                    </li>
-                </ul>
-                <div class="clearfix"></div>
-            </div>
-
-            <div id="lightbox" class="row">
-                <div class="col-sm-6 col-md-3 col-lg-3 motivational">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-                                <div class="hover-text">
-                                    <h4>Blog Title</h4>
-                                    <small>John Smith</small>
-                                    <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
-                                </div>
-                                <img src="img/team/01.jpg" alt="..." class="team-img">
-                            </a>
+                <div class="row"><br><hr><br></div>
+                <div class="row text-left">
+                    <div class="col-xs-offset-0 col-md-8 col-md-offset-2">
+                        <img src="http://placehold.it/350x200" class="img-responsive" style="float:right;"/>
+                        <div class="text-center">
+                            <h2>Event Title #2</h2>
+                            <h4>Oct. 14th, 2015</h4>  
                         </div>
-                    </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eleifend, magna vel lobortis dapibus, ante felis molestie nisl, at mollis ex augue eu erat. Vivamus pellentesque sollicitudin augue, et rhoncus sapien molestie vel. Vivamus rhoncus ultrices libero ut pharetra. Aenean non nisi eu tortor auctor hendrerit. Morbi arcu massa, dictum at sagittis ut, tempor quis tellus. Morbi pellentesque facilisis orci. Mauris sapien ante, condimentum eu sapien ac, porta maximus ligula. Praesent id nisl vel lorem volutpat finibus.</p>
+                    </div>        
                 </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 womanhood life">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-                                <div class="hover-text">
-                                    <h4>Blog Title</h4>
-                                    <small>Allison Williams</small>
-                                    <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
-                                </div>
-                                <img src="img/team/02.jpg" alt="..." class="team-img">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 motivational">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-                                <div class="hover-text">
-                                    <h4>Blog Title</h4>
-                                    <small>Thomas Allen</small>
-                                    <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
-                                </div>
-                                <img src="img/team/03.jpg" alt="..." class="team-img">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 motivational">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-                                <div class="hover-text">
-                                    <h4>Blog Title</h4>
-                                    <small>John Smith</small>
-                                    <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
-                                </div>
-                                <img src="img/team/01.jpg" alt="..." class="team-img">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 religious">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-                                <div class="hover-text">
-                                    <h4>Blog Title</h4>
-                                    <small>Sally Jones</small>
-                                    <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
-                                </div>
-                                <img src="img/team/04.jpg" alt="..." class="team-img">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 womanhood">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-                                <div class="hover-text">
-                                    <h4>Blog Title</h4>
-                                    <small>Allison Williams</small>
-                                    <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
-                                </div>
-                                <img src="img/team/02.jpg" alt="..." class="team-img">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 photography religious">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-                                <div class="hover-text">
-                                    <h4>Blog Title</h4>
-                                    <small>John Smith</small>
-                                    <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
-                                </div>
-                                <img src="img/team/01.jpg" alt="..." class="team-img">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-3 col-lg-3 religious">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-                                <div class="hover-text">
-                                    <h4>Blog Title</h4>
-                                    <small>Sally Jones</small>
-                                    <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
-                                </div>
-                                <img src="img/team/04.jpg" alt="..." class="team-img">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
@@ -426,7 +317,105 @@
         </div>
     </div>
 
-    
+    <div id="aboutModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">About BATON</h4>
+                </div>
+                <div class="modal-body">
+                    <p><i>Some of us walk down foggy roads, looking for clarity and direction.  What if we could walk with someone who can shed light and experience on the journey?</i></p>
+
+                    <p>Baton serves two kinds of people: the person who is looking for direction or encouragement -and- the person who is looking for an avenue to share the life lessons they’ve learned.</p>
+
+                    <p>While there are many books and resources to equip us in the Christian life, many people lack the one-on-one intentional mentorship that spurs real growth.  Books can’t replace real, raw conversation.  Superficial relationships can’t speak into the core of who you are.  Baton is giving you permission to be real.  What are your struggles, your passions, and the tensions in your life?</p>
+
+                    <p>We will match you with women who have walked in similar roles, gone through similar experiences or pains, and are passionate about helping you navigate through this world as the woman God has created and called you to be.</p>
+
+                    <br>
+                    <span class="heading">Is Baton for You?</span>
+                    <p>Maybe you need immediate, Godly advice. Maybe you want mentorship for a short season. Or maybe you are looking to be fully known and held accountable for the long run.  Whether it’s seeking someone who’s been through a similar struggle, learning from life experience in roles such as a being wife or mom, or finding someone to fuel the passion in your heart in areas of business or creativity, God has equipped the body of Christ to speak truth and life into all of these situations.  He has given us his Word, Holy Spirit, and each other--what a precious gift!</p>
+
+                    <p>Do you know Jesus?  Have you walked with Him long enough to hear and practice the truth of His word?  Your experience as: a believer, a wife, a mom, a single woman, a conqueror of obstacles, a learner from past mistakes, a seeker of God’s will...those are the threads God has weaved in you.  Those experiences are not just for yourself--they are to encourage and guide others as we pursue His holiness and our sanctification.</p>
+
+                    <p>Answer the Call.<br> 
+                    Pass it on.</p>
+
+                    <br>
+                    <span class="heading">Our Name - BATON</span>
+ 
+                    <p>We all have a race to run.  It might be your role as a mom, your journey through a struggle, or a passion to use your story to inspire others.  But we aren’t meant to run alone—we are called to run as a team.  It is a world of a difference to have someone who can point out the potholes that they tripped on or encourage you up a difficult hill.</p>
+                     
+                    <p>God calls us to step out of our comfort zone and step into areas that require much of us.  He has not only equipped us with his Word and Holy Spirit, but with His people.  We can look to and learn from others who have run a similar race.</p>
+                     
+                    <p>In any relay, the success doesn’t just depend on each individual’s ability to run well. It also hinges on the passing of the baton.  The passer must be intentional to position the baton in a way that sets up the receiver for success.  It can’t be thrown carelessly and then expected to be caught.  There is coaching, practice, and training involved.  The next runner must also be ready and prepared.  Once it’s in their hand, they can’t just stand there.  They need to run.</p>
+                     
+                    <p>Let’s run as a team.  Let’s equip the next generation by making sure we are intentional in the pass off.  If you are ‘waiting' for your turn to run, know that you must shift in how you understand your position.   You are training, building strength, and preparing.  How do you prepare for a race? By running.  Live in anticipation and expectancy-not in a stand still.  It’s not a matter of if you will be passed the baton, but when.</p>
+                     
+                    <p>What will you do with it?</p>
+
+                    <br>
+                    <span class="heading">Meet the Team</span>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <button type="button" data-toggle="modal" data-target="#katyModal"><img src="img/katy.png" alt="" style="width:100%;"></button>
+                        </div>
+                        <div class="col-xs-6">
+                            <button type="button" data-toggle="modal" data-target="#bridgetteModal"><img src="img/bridgette.png" alt="" style="width:100%;"></button>
+                        </div>
+                    </div>
+                    
+                    <div id="katyModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Katy Gregory</h4>
+                                </div>
+                                <div class="modal-body">
+                                    Katy (Founder):
+                                    Katy transplanted from San Antonio to Dallas in 2011 with her husband, David, and loves this city!  She grew up in a Japanese-American home to parents she deeply respects and two sisters (katy is also a twin).  She loves finding productivity hacks and organizing.  She also sings with her husband in a band called Dave and Kate.  
+
+                                    Katy’s story of coming to know Christ is one that testifies to how God uses unexpected circumstances to reveal himself. She grew up with a Buddhist mom and agnostic dad but became a Christian in high school… this began her thirst for spiritual mentorship.    
+                                     
+                                    Katy is passionate about the local church, community, and discipleship.  She hopes to always step out in faith, even when it’s scary and unknown. 
+
+                                    Church: Fellowship Bible Church
+                                    Email: 
+                                    Instagram: @katylady9
+                                    Twitter:
+                                    Facebook:
+
+                                    <!-- Bridgette (Director of Events):
+                                    Bridgette moved to Dallas by way of Washington, D.C. back in 2012 and, though a coastal girl at heart, she’s fallen in love with Texas! As the 2nd of four children, Bridgette comes from a very loving and very full family. She grew up as a military brat and moved often, so she gained a love for seeing new places and is currently blessed with the opportunity to travel - domestically and abroad - for work as an event planner. 
+
+                                    A product of a Christian home; Bridgette came to know Christ at an early age. However, her journey hasn’t been easy as she came from very humble beginnings and a rocky past; but her faith in the Lord is strong and she leans heavily on God’s promises through both triumphs and trials.  
+
+                                    Bridgette is passionate about volunteering for causes and organizations that make a difference in the lives of those around her. Her heart is filled while working with teenage girls in her church’s student ministry. It’s this opportunity that has revitalized her desire for mentoring as she sees, daily, the importance of pouring into the next generation. 
+
+                                    Church: Fellowship Bible Church Dallas
+                                    Email: bridgette(at)batonmatch.com ????
+                                    Instagram: @joyewonder
+                                    Twitter: @joyewonder -->
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>    
 
     <nav id="footer">
         <div class="container">
